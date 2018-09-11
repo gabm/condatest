@@ -1,0 +1,23 @@
+package:
+  name: condatest
+  version: "1"
+
+source:
+  git_url: ../
+
+
+requirements:
+  build:
+    - cmake
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+
+  host:
+    - zeromq
+
+    
+  run:
+    - zeromq
+
+extra:
+  git-commit: {{ GIT_FULL_HASH }}
